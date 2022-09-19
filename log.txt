@@ -1,0 +1,10 @@
+1 - CREAMOS LOS DIRECTORIOS CORRESPONDIENTES
+2 - CREAR ROUTER
+	Browser router
+	crear carpeta router
+	<Routes>
+        <Route path='' element={} />
+      </Routes>
+3 - Crear Pages
+4- <Route path='marvel' element={<MarvelPage />} />
+5 - Agregar Router al HeroesApp
