@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import { getHeroById } from '../helpers'
 
@@ -5,7 +6,7 @@ export const Hero = () => {
   const { id } = useParams()
   const navigate = useNavigate()
 
-  const hero = getHeroById(id)
+  const hero = useMemo(() => getHeroById(id), [id])
 
   const onNavigateBack = () => {
     if (hero.publisher === 'DC Comics') {
@@ -21,7 +22,7 @@ export const Hero = () => {
 
   console.log(hero)
   return (
-    <div className='row mt-5'>
+    <div className='row mt-5 animate__animated animate__fadeInLeft'>
       <div className='col-4'>
         <img src={`/assets/heroes/${hero.id}.jpg`} alt={hero.superhero} className='img-thumbnail' />
       </div>
