@@ -27,8 +27,14 @@ export const AuthProvider = ({ children }) => {
     dispatch(action)
   }
 
+  const logout = () => {
+    localStorage.removeItem('user')
+    const action = { type: types.logout, payload: {} }
+    dispatch(action)
+  }
+
   return (
-    <AuthContext.Provider value={{ login, ...state }}>
+    <AuthContext.Provider value={{ login, ...state, logout }}>
       {children}
     </AuthContext.Provider>
   )

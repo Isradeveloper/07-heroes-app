@@ -3,10 +3,12 @@ import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../auth/context/authContext'
 
 export const Navbar = () => {
-  const { user } = useContext(AuthContext)
+  const { user, logout } = useContext(AuthContext)
   const navigate = useNavigate()
 
   const onLogout = () => {
+    // eslint-disable-next-line semi
+    logout();
     navigate('/login', {
       replace: true
     })
